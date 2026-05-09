@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National QuAIL – Research</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#e8f0fe;--text-muted:#7a90b0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,10,20,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+    .nav-logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.75rem;color:#fff;flex-shrink:0;}
+    .nav-brand-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:0.04em;}
+    .nav-brand-text span{color:var(--accent);}
+    .nav-links{display:flex;gap:0.15rem;list-style:none;}
+    .nav-links a{display:block;padding:0.4rem 0.85rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    .nav-links a:hover{color:var(--accent);background:rgba(0,180,255,0.08);}
+    .nav-links a.active{color:var(--accent);background:rgba(0,180,255,0.1);border-bottom:2px solid var(--accent);}
+    .page-content{padding-top:64px;}
+    .page-hero{background:var(--bg2);padding:3.5rem 2.5rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(0,255,195,0.06) 0%,transparent 60%);pointer-events:none;}
+    .page-hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+    .page-hero h1{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;letter-spacing:0.04em;color:var(--text);}
+    .page-hero p{font-size:1rem;color:var(--text-muted);margin-top:0.5rem;max-width:600px;}
+    .section{padding:4rem 0;}
+    .container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
+
+    .research-area{margin-bottom:4rem;padding-bottom:4rem;border-bottom:1px solid var(--border);}
+    .research-area:last-child{border-bottom:none;}
+    .research-area-header{display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:1.75rem;}
+    .research-icon-big{width:64px;height:64px;border-radius:14px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+    .research-area-header h2{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;letter-spacing:0.04em;color:var(--text);margin-bottom:0.3rem;}
+    .research-area-header p{font-size:0.95rem;color:var(--text-muted);}
+    .research-topics{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:1.5rem;}
+    .topic-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.5rem;transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden;}
+    .topic-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.25s;}
+    .topic-card:hover{border-color:rgba(0,180,255,0.3);transform:translateY(-3px);}
+    .topic-card:hover::before{opacity:1;}
+    .topic-card h3{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.03em;}
+    .topic-card p{font-size:0.9rem;color:var(--text-muted);line-height:1.6;}
+
+    footer{background:#020609;border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;}
+    footer a{color:var(--accent);text-decoration:none;}
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){.research-topics{grid-template-columns:1fr;}.nav-links a{padding:0.4rem 0.5rem;font-size:0.75rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">Q</div>
+    <span class="nav-brand-text">National <span>QuAIL</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="outreach.html">Outreach</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="page-content">
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Applications in Engineering and Science</p>
+    <h1>Research</h1>
+    <p>Advancing the frontiers of quantum computing, sensing, and hardware through interdisciplinary collaboration.</p>
+  </div>
+
+  <div class="section">
+    <div class="container">
+
+      <div class="research-area fade-up">
+        <div class="research-area-header">
+          <div class="research-icon-big">⚛️</div>
+          <div>
+            <h2>Quantum Computing</h2>
+            <p>Developing near-term and long-term quantum computing applications through algorithm design, hybrid workflows, and error correction.</p>
+          </div>
+        </div>
+        <div class="research-topics">
+          <div class="topic-card">
+            <h3>Algorithm Design</h3>
+            <p>Designing quantum algorithms for optimization, simulation, and machine learning tasks that provide demonstrable advantages over classical approaches.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Hybrid CPU-GPU-QPU Workflows</h3>
+            <p>Orchestrating computation across classical and quantum processors to tackle problems that neither paradigm can solve efficiently alone.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Quantum Error Correction</h3>
+            <p>Developing robust error mitigation and correction strategies to enable reliable computation on near-term noisy intermediate-scale quantum (NISQ) devices.</p>
+          </div>
+          <div class="topic-card">
+            <h3>AI-Assisted Quantum Access</h3>
+            <p>Leveraging AI to enable scientists and engineers without deep quantum expertise to discover and utilize quantum algorithms and optimize workflows.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-area fade-up">
+        <div class="research-area-header">
+          <div class="research-icon-big">🔬</div>
+          <div>
+            <h2>Quantum Sensing</h2>
+            <p>Advancing quantum sensing technologies for precision measurement across earth science, structural monitoring, and environmental applications.</p>
+          </div>
+        </div>
+        <div class="research-topics">
+          <div class="topic-card">
+            <h3>Precision Measurement</h3>
+            <p>Exploiting quantum mechanical properties such as entanglement and superposition to achieve measurement sensitivity beyond classical limits.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Earth Science Applications</h3>
+            <p>Applying quantum sensing to atmospheric, geophysical, and environmental monitoring, including collaboration with national laboratory partners at PNNL.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Structural Health Monitoring</h3>
+            <p>Developing quantum-enhanced sensors for real-time monitoring of infrastructure integrity, supporting safer and more resilient built environments.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Sensor Integration</h3>
+            <p>Integrating quantum sensors with classical data pipelines and AI-driven analysis platforms for actionable insight from high-fidelity measurements.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="research-area fade-up">
+        <div class="research-area-header">
+          <div class="research-icon-big">🖥️</div>
+          <div>
+            <h2>Quantum Computer Building</h2>
+            <p>Designing and constructing quantum computing hardware, from qubit architectures to scalable integration with classical systems.</p>
+          </div>
+        </div>
+        <div class="research-topics">
+          <div class="topic-card">
+            <h3>Qubit Design &amp; Fabrication</h3>
+            <p>Researching superconducting, trapped-ion, and photonic qubit platforms with a focus on coherence times, gate fidelity, and scalability.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Decoherence Mitigation</h3>
+            <p>Developing materials, architectures, and control strategies to minimize environmental noise and extend quantum coherence in hardware systems.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Scalable Architectures</h3>
+            <p>Designing modular, fault-tolerant quantum computing architectures that can scale toward practical, large-scale quantum advantage.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Classical-Quantum Integration</h3>
+            <p>Building the control electronics, cryogenic interfaces, and software stacks needed to seamlessly bridge quantum hardware with classical computing infrastructure.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>&copy; 2025 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
+<script>
+  document.querySelectorAll('.fade-up').forEach(el => {
+    new IntersectionObserver(([e]) => { if(e.isIntersecting) el.classList.add('visible'); },{threshold:0.1}).observe(el);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National QuAIL – Outreach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#e8f0fe;--text-muted:#7a90b0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,10,20,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+    .nav-logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.75rem;color:#fff;flex-shrink:0;}
+    .nav-brand-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:0.04em;}
+    .nav-brand-text span{color:var(--accent);}
+    .nav-links{display:flex;gap:0.15rem;list-style:none;}
+    .nav-links a{display:block;padding:0.4rem 0.85rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    .nav-links a:hover{color:var(--accent);background:rgba(0,180,255,0.08);}
+    .nav-links a.active{color:var(--accent);background:rgba(0,180,255,0.1);border-bottom:2px solid var(--accent);}
+    .page-content{padding-top:64px;}
+    .page-hero{background:var(--bg2);padding:3.5rem 2.5rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(123,47,255,0.07) 0%,transparent 60%);pointer-events:none;}
+    .page-hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+    .page-hero h1{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;letter-spacing:0.04em;color:var(--text);}
+    .page-hero p{font-size:1rem;color:var(--text-muted);margin-top:0.5rem;max-width:600px;}
+    .section{padding:4rem 0;}
+    .container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
+
+    .outreach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+    .outreach-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;text-align:center;transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden;}
+    .outreach-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));opacity:0;transition:opacity 0.25s;}
+    .outreach-card:hover{border-color:rgba(0,180,255,0.3);transform:translateY(-4px);}
+    .outreach-card:hover::before{opacity:1;}
+    .out-icon{font-size:3rem;margin-bottom:1.25rem;display:block;}
+    .outreach-card h3{font-family:'Rajdhani',sans-serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;letter-spacing:0.03em;}
+    .outreach-card p{font-size:0.92rem;color:var(--text-muted);line-height:1.65;}
+    .outreach-card .out-details{margin-top:1.25rem;text-align:left;border-top:1px solid var(--border);padding-top:1.25rem;}
+    .out-detail-item{display:flex;gap:0.6rem;align-items:flex-start;margin-bottom:0.6rem;font-size:0.85rem;color:var(--text-muted);}
+    .out-detail-item::before{content:'→';color:var(--accent);flex-shrink:0;margin-top:0.05rem;}
+
+    footer{background:#020609;border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;}
+    footer a{color:var(--accent);text-decoration:none;}
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){.outreach-grid{grid-template-columns:1fr;}.nav-links a{padding:0.4rem 0.5rem;font-size:0.75rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">Q</div>
+    <span class="nav-brand-text">National <span>QuAIL</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="outreach.html" class="active">Outreach</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="page-content">
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Community Engagement</p>
+    <h1>Outreach</h1>
+    <p>Bringing quantum science to students, educators, and communities across the nation.</p>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="outreach-grid fade-up">
+
+        <div class="outreach-card">
+          <span class="out-icon">🎓</span>
+          <h3>K–12 Students</h3>
+          <p>Inspiring the next generation of quantum scientists and engineers through interactive, hands-on programs designed to make quantum concepts accessible and exciting.</p>
+          <div class="out-details">
+            <div class="out-detail-item">Interactive quantum computing workshops</div>
+            <div class="out-detail-item">Demonstrations and science fair participation</div>
+            <div class="out-detail-item">Lab visit programs for school groups</div>
+            <div class="out-detail-item">Online educational resources and activities</div>
+          </div>
+        </div>
+
+        <div class="outreach-card">
+          <span class="out-icon">📚</span>
+          <h3>K–12 Teachers</h3>
+          <p>Supporting educators through the Education Program of Missouri S&T, equipping them with the knowledge and tools to bring quantum science into their classrooms.</p>
+          <div class="out-details">
+            <div class="out-detail-item">Professional development workshops</div>
+            <div class="out-detail-item">Quantum curriculum development resources</div>
+            <div class="out-detail-item">Classroom demonstration toolkits</div>
+            <div class="out-detail-item">Ongoing educator network and support</div>
+          </div>
+        </div>
+
+        <div class="outreach-card">
+          <span class="out-icon">🌐</span>
+          <h3>Community Outreach</h3>
+          <p>Engaging the broader public through open events, partnerships, and accessible science communication to raise awareness of quantum technologies and their societal impact.</p>
+          <div class="out-details">
+            <div class="out-detail-item">Public lectures and science café events</div>
+            <div class="out-detail-item">Partnerships with local organizations and NGOs</div>
+            <div class="out-detail-item">Science communication and media engagement</div>
+            <div class="out-detail-item">Diversity and inclusion initiatives in STEM</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>&copy; 2025 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
+<script>
+  document.querySelectorAll('.fade-up').forEach(el => {
+    new IntersectionObserver(([e]) => { if(e.isIntersecting) el.classList.add('visible'); },{threshold:0.1}).observe(el);
+  });
+</script>
+</body>
+</html>

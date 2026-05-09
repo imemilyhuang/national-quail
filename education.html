@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>National QuAIL – Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#e8f0fe;--text-muted:#7a90b0;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,10,20,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+    .nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
+    .nav-logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.75rem;color:#fff;flex-shrink:0;}
+    .nav-brand-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:0.04em;}
+    .nav-brand-text span{color:var(--accent);}
+    .nav-links{display:flex;gap:0.15rem;list-style:none;}
+    .nav-links a{display:block;padding:0.4rem 0.85rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    .nav-links a:hover{color:var(--accent);background:rgba(0,180,255,0.08);}
+    .nav-links a.active{color:var(--accent);background:rgba(0,180,255,0.1);border-bottom:2px solid var(--accent);}
+    .page-content{padding-top:64px;}
+    .page-hero{background:var(--bg2);padding:3.5rem 2.5rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,180,255,0.07) 0%,transparent 60%);pointer-events:none;}
+    .page-hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
+    .page-hero h1{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;letter-spacing:0.04em;color:var(--text);}
+    .page-hero p{font-size:1rem;color:var(--text-muted);margin-top:0.5rem;max-width:600px;}
+    .section{padding:4rem 0;}
+    .container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
+
+    .edu-list{display:flex;flex-direction:column;gap:1.5rem;}
+    .edu-card{display:grid;grid-template-columns:80px 1fr;gap:2rem;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2.25rem 2.5rem;align-items:start;transition:border-color 0.25s,transform 0.25s;position:relative;overflow:hidden;}
+    .edu-card::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.25s;}
+    .edu-card:hover{border-color:rgba(0,180,255,0.3);transform:translateX(4px);}
+    .edu-card:hover::after{opacity:1;}
+    .edu-num{font-family:'Rajdhani',sans-serif;font-size:3.5rem;font-weight:700;color:var(--border);line-height:1;text-align:right;}
+    .edu-body h3{font-family:'Rajdhani',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:0.5rem;letter-spacing:0.03em;}
+    .edu-body p{font-size:0.95rem;color:var(--text-muted);line-height:1.7;}
+    .edu-tag{display:inline-block;margin-top:0.75rem;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent3);background:rgba(0,255,195,0.08);border:1px solid rgba(0,255,195,0.2);border-radius:4px;padding:0.2rem 0.65rem;}
+
+    footer{background:#020609;border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;}
+    footer a{color:var(--accent);text-decoration:none;}
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+    @media(max-width:768px){.edu-card{grid-template-columns:1fr;}.edu-num{font-size:2rem;text-align:left;}.nav-links a{padding:0.4rem 0.5rem;font-size:0.75rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">Q</div>
+    <span class="nav-brand-text">National <span>QuAIL</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="people.html">People</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="education.html" class="active">Education</a></li>
+    <li><a href="outreach.html">Outreach</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="page-content">
+  <div class="page-hero">
+    <p class="page-hero-eyebrow">Training the Next Generation</p>
+    <h1>Education</h1>
+    <p>From undergraduate minors to intensive bootcamps, QuAIL offers pathways for every stage of learning.</p>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <div class="edu-list">
+
+        <div class="edu-card fade-up">
+          <div class="edu-num">01</div>
+          <div class="edu-body">
+            <h3>Minor of Undergraduate Degrees</h3>
+            <p>An interdisciplinary minor in quantum computing and AI available to undergraduate students across engineering, science, mathematics, and computer science programs. Designed to give the next generation of scientists and engineers foundational literacy in quantum technologies.</p>
+            <span class="edu-tag">Undergraduate</span>
+          </div>
+        </div>
+
+        <div class="edu-card fade-up">
+          <div class="edu-num">02</div>
+          <div class="edu-body">
+            <h3>Master Degree</h3>
+            <p>A graduate-level master's program focused on quantum computing, quantum sensing, and AI integration. Prepares students for careers in academia, national laboratories, and industry through rigorous coursework, research projects, and collaboration with QuAIL network partners.</p>
+            <span class="edu-tag">Graduate</span>
+          </div>
+        </div>
+
+        <div class="edu-card fade-up">
+          <div class="edu-num">03</div>
+          <div class="edu-body">
+            <h3>Graduate Certificate</h3>
+            <p>A flexible certificate program for professionals and graduate students seeking focused training in quantum computing and AI without committing to a full degree. Ideal for those looking to upskill or pivot into quantum-adjacent fields.</p>
+            <span class="edu-tag">Graduate · Professional</span>
+          </div>
+        </div>
+
+        <div class="edu-card fade-up">
+          <div class="edu-num">04</div>
+          <div class="edu-body">
+            <h3>Summer School</h3>
+            <p>An intensive summer program bringing together students and early-career researchers for hands-on training in quantum computing, sensing, and AI methodologies. Features lectures from leading experts, lab visits, and collaborative projects.</p>
+            <span class="edu-tag">Summer · All Levels</span>
+          </div>
+        </div>
+
+        <div class="edu-card fade-up">
+          <div class="edu-num">05</div>
+          <div class="edu-body">
+            <h3>Bootcamp</h3>
+            <p>Short-form, immersive bootcamp experiences designed to rapidly upskill scientists and engineers in practical quantum computing and AI tools and techniques. Accessible to participants from any technical background, with no prior quantum experience required.</p>
+            <span class="edu-tag">Short-Term · Professional</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>&copy; 2025 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
+<script>
+  document.querySelectorAll('.fade-up').forEach(el => {
+    new IntersectionObserver(([e]) => { if(e.isIntersecting) el.classList.add('visible'); },{threshold:0.1}).observe(el);
+  });
+</script>
+</body>
+</html>
