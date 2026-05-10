@@ -4,25 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>National QuAIL – About</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #050a14; --bg2: #080e1c; --surface: #0c1526; --surface2: #111d30;
-      --border: rgba(0,180,255,0.12); --accent: #00b4ff; --accent2: #7b2fff;
-      --accent3: #00ffc3; --text: #e8f0fe; --text-muted: #7a90b0; --gold: #f0c040;
-    }
+    :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#f1f4fa;--text-muted:#f1f4fa;}
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Source Serif 4', Georgia, serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--bg); color: var(--text); font-family: 'Google Sans Flex', sans-serif; font-weight: 200; font-size: 1.125rem; line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; }
+    b, strong { font-weight: 500; }
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(5,10,20,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 64px; }
     .nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .nav-logo { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.75rem; color: #fff; flex-shrink: 0; }
-    .nav-brand-text { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); letter-spacing: 0.04em; }
+    .nav-logo { flex-shrink: 0; height: 40px; display: flex; align-items: center; justify-content: center; }
+    .nav-logo img { height: 100%; width: auto; max-width: 120px; display: block; object-fit: contain; }
+    .nav-brand-text { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; font-size: 1.1rem; color: var(--text); letter-spacing: 0.04em; }
     .nav-brand-text span { color: var(--accent); }
     .nav-links { display: flex; gap: 0.15rem; list-style: none; }
-    .nav-links a { display: block; padding: 0.4rem 0.85rem; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    .nav-links a { display: block; padding: 0.4rem 0.85rem; font-family: 'Google Sans Flex', sans-serif; font-weight: 500; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; border-radius: 4px; transition: color 0.2s, background 0.2s; }
     .nav-links a:hover { color: var(--accent); background: rgba(0,180,255,0.08); }
     .nav-links a.active { color: var(--accent); background: rgba(0,180,255,0.1); border-bottom: 2px solid var(--accent); }
 
@@ -33,41 +36,39 @@
     .watermark-cover { position: absolute; top: 0; width: 130px; height: 28px; background: #000; z-index: 5; }
     .watermark-cover.left { left: 0; }
     .watermark-cover.right { right: 0; }
-    .video-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #060d1a, #0a1830); gap: 0.75rem; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; }
+    .video-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #060d1a, #0a1830); gap: 0.75rem; color: var(--text-muted); }
     .video-placeholder-icon { width: 48px; height: 48px; border: 2px solid var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0.4; }
     .video-placeholder-icon::after { content: '▶'; color: var(--accent); font-size: 1rem; margin-left: 4px; }
     .video-placeholder p { font-size: 0.8rem; opacity: 0.4; }
     .hero-divider { height: 5px; background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent3)); }
     .hero-title-bar { background: var(--bg2); padding: 2.5rem 3rem 2.5rem; text-align: center; position: relative; }
     .hero-title-bar::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(0,180,255,0.07) 0%, transparent 70%); pointer-events: none; }
-    .hero-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
-    h1.hero-name { font-family: 'Rajdhani', sans-serif; font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 700; letter-spacing: 0.04em; line-height: 1.1; color: var(--text); margin-bottom: 0.5rem; }
+    h1.hero-name { font-size: clamp(2rem, 5vw, 3.6rem); letter-spacing: 0.04em; line-height: 1.1; color: var(--text); }
     h1.hero-name span { color: var(--accent); }
-    .hero-tagline { font-family: 'Source Serif 4', serif; font-style: italic; font-size: 1.1rem; color: var(--text-muted); }
 
     /* PAGE CONTENT */
     .page-content { padding-top: 64px; }
     .section { padding: 5rem 0; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
-    .section-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
-    h2.section-title { font-family: 'Rajdhani', sans-serif; font-size: 2.2rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text); margin-bottom: 2.5rem; position: relative; display: inline-block; }
-    h2.section-title::after { content: ''; position: absolute; left: 0; bottom: -8px; width: 40px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; display: flex; flex-direction: column; align-items: stretch; }
+    .section-label { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    h2.section-title { font-size: 2.2rem; letter-spacing: 0.04em; color: var(--text); margin-bottom: 2.5rem; position: relative; display: inline-block; align-self: center; text-align: center; }
+    h2.section-title::after { content: ''; position: absolute; left: 50%; bottom: -8px; width: 40px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; transform: translateX(-50%); }
 
     /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .about-text p { margin-bottom: 1.2rem; color: var(--text); font-size: 1rem; }
-    .about-text strong { color: var(--accent); font-weight: 600; }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start; }
+    .about-text p { margin-bottom: 1.2rem; color: var(--text); font-size: 1.2rem; }
+    .about-text strong { color: var(--accent); font-weight: 500; }
     .vision-mission { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
     .vision-block { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
-    .vision-block h3 { font-family: 'Rajdhani', sans-serif; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent3); margin-bottom: 0.5rem; }
-    .vision-block p { font-size: 0.95rem; color: var(--text-muted); }
-    .mission-heading { font-family: 'Rajdhani', sans-serif; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent3); margin-bottom: 0.75rem; }
-    .mission-list { list-style: none; }
-    .mission-list li { position: relative; padding-left: 1.5rem; margin-bottom: 0.9rem; font-size: 0.95rem; color: var(--text-muted); }
-    .mission-list li::before { content: '◆'; position: absolute; left: 0; color: var(--accent); font-size: 0.6rem; top: 0.45rem; }
+    .vision-block h3 { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .vision-block p { font-size: 1.0625rem; color: var(--text-muted); }
+    .mission-heading { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .mission-list { margin: 0.75rem 0 0 0; padding-left: 1.35rem; list-style-position: outside; }
+    .mission-list li { margin-bottom: 0.9rem; font-size: 1.0625rem; color: var(--text-muted); padding-left: 0.25rem; }
+    .mission-list li::marker { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; color: var(--accent); }
 
     /* FOOTER */
-    footer { background: #020609; border-top: 1px solid var(--border); padding: 2rem 2.5rem; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; }
+    footer { background: #020609; border-top: 1px solid var(--border); padding: 2rem 2.5rem; text-align: center; font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; }
     footer a { color: var(--accent); text-decoration: none; }
 
     /* FADE */
@@ -84,7 +85,7 @@
 <body>
 <nav>
   <a href="index.html" class="nav-brand">
-    <div class="nav-logo">Q</div>
+    <div class="nav-logo"><img src="images/logo.png" alt="National QuAIL" width="120" height="120" /></div>
     <span class="nav-brand-text">National <span>QuAIL</span></span>
   </a>
   <ul class="nav-links">
@@ -115,7 +116,6 @@
   <div class="hero-divider"></div>
   <div class="hero-title-bar">
     <h1 class="hero-name">National <span>Qu</span>antum <span>AI</span> <span>L</span>aboratory</h1>
-    <p class="hero-tagline">Empower quantum computing using AI</p>
   </div>
 
   <!-- ABOUT CONTENT -->
@@ -126,7 +126,7 @@
         <div class="about-text">
           <p><strong>National Quantum AI Laboratory (National QuAIL)</strong> is a national network dedicated to identifying near-term and long-term applications of quantum computing and quantum sensing.</p>
           <p>It brings together experts in quantum mechanics, quantum computing, quantum sensing, artificial intelligence, computer science, mathematics, science, and engineering from academia, national labs, industry, and NGOs.</p>
-          <p>By breaking traditional disciplinary silos, QuAIL aims to address intractable scientific and engineering challenges through the orchestration of CPU-, GPU-, and QPU-based computing.</p>
+          <p>By breaking traditional disciplinary silos, QuAIL aims to address intractable scientific and engineering challenges through the orchestration of CPU-, GPU-, and QPU-based computing, as well as AI.</p>
           <p>To democratize access to quantum computing, QuAIL will leverage AI to enable scientists and engineers without deep quantum expertise to discover and utilize quantum algorithms, optimize workflows, and advance quantum error correction and hybrid computing frameworks.</p>
         </div>
         <div class="vision-mission">
@@ -135,18 +135,32 @@
             <p>Empower quantum computing using AI.</p>
           </div>
           <p class="mission-heading">Mission</p>
-          <ul class="mission-list">
-            <li>Build a national network dedicated to identifying near-term and long-term applications of quantum computing and quantum sensing across academia, national laboratories, industry, and NGOs.</li>
-            <li>Break traditional disciplinary silos to address intractable scientific and engineering challenges through the orchestration of CPU-, GPU-, and QPU-based computing.</li>
-            <li>Democratize access to quantum computing by leveraging AI to enable scientists and engineers to discover and utilize quantum algorithms and optimize workflows.</li>
-          </ul>
+          With the overarching goal of addressing intractable scientific and engineering challenges through the coordinated use of CPUs, GPUs, QPUs, and AI, the National QuAIL’s mission is to achieve Q-U-A-I-L: 
+
+          <ol class="mission-list">
+            <li>
+              Quicken (Propel) quantum research with GPU-accelerated quantum simulation for identified applications beyond HPC reach;
+            </li>
+            <li>
+              Untangle scalability, error-correction, and qubit readout hurdles across diverse quantum hardware;
+            </li>
+            <li>
+              Accelerate democratization access to quantum computing via AI-enabled tools;
+            </li>
+            <li>
+              Increase interdisciplinary collaboration among academia, national laboratories, industry, and NGOs; and
+            </li>
+            <li>
+              Leapfrog workforce development and cultivate the next generation of quantum-enabled researchers and practitioners.
+            </li>
+          </ol>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<footer>&copy; 2025 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
+<footer>&copy; 2026 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
 <script>
   document.querySelectorAll('.fade-up').forEach(el => {
     new IntersectionObserver(([e]) => { if(e.isIntersecting){ el.classList.add('visible'); } }, {threshold:0.1}).observe(el);
