@@ -13,7 +13,7 @@
     :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#f1f4fa;--text-muted:#f1f4fa;}
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Google Sans Flex', sans-serif; font-weight: 200; font-size: 1.125rem; line-height: 1.7; overflow-x: hidden; }
+    body { background: var(--bg); color: var(--text); font-family: 'Google Sans Flex', sans-serif; font-weight: 200; font-size: 1.25rem; line-height: 1.7; overflow-x: hidden; }
     h1, h2, h3, h4, h5, h6 { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; }
     b, strong { font-weight: 500; }
 
@@ -33,7 +33,7 @@
     .hero-video-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; width: 100%; height: 280px; }
     .hero-video-cell { position: relative; overflow: hidden; background: #000; }
     .hero-video-cell video { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .watermark-cover { position: absolute; top: 0; width: 130px; height: 28px; background: #000; z-index: 5; }
+    .watermark-cover { position: absolute; top: 0; width: 110px; height: 28px; background: #000; z-index: 5; }
     .watermark-cover.left { left: 0; }
     .watermark-cover.right { right: 0; }
     .video-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #060d1a, #0a1830); gap: 0.75rem; color: var(--text-muted); }
@@ -52,23 +52,23 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; display: flex; flex-direction: column; align-items: stretch; }
     .section-label { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
     h2.section-title { font-size: 2.2rem; letter-spacing: 0.04em; color: var(--text); margin-bottom: 2.5rem; position: relative; display: inline-block; align-self: center; text-align: center; }
-    h2.section-title::after { content: ''; position: absolute; left: 50%; bottom: -8px; width: 40px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; transform: translateX(-50%); }
+    h2.section-title::after { content: ''; position: absolute; left: 50%; bottom: -8px; width: 140px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; transform: translateX(-50%); }
 
     /* ABOUT */
     .about-grid { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start; }
-    .about-text p { margin-bottom: 1.2rem; color: var(--text); font-size: 1.2rem; }
+    .about-text p { margin-bottom: 1.2rem; color: var(--text); font-size: 1.35rem; }
     .about-text strong { color: var(--accent); font-weight: 500; }
     .vision-mission { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
     .vision-block { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
     .vision-block h3 { font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
-    .vision-block p { font-size: 1.0625rem; color: var(--text-muted); }
+    .vision-block p { font-size: 1.1875rem; color: var(--text-muted); }
     .mission-heading { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
     .mission-list { margin: 0.75rem 0 0 0; padding-left: 1.35rem; list-style-position: outside; }
-    .mission-list li { margin-bottom: 0.9rem; font-size: 1.0625rem; color: var(--text-muted); padding-left: 0.25rem; }
+    .mission-list li { margin-bottom: 0.9rem; font-size: 1.1875rem; color: var(--text-muted); padding-left: 0.25rem; }
     .mission-list li::marker { font-family: 'Google Sans Flex', sans-serif; font-weight: 500; color: var(--accent); }
 
     /* FOOTER */
-    footer { background: #020609; border-top: 1px solid var(--border); padding: 2rem 2.5rem; text-align: center; font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; }
+    footer { background: #020609; border-top: 1px solid var(--border); padding: 2rem 2.5rem; text-align: center; font-size: 1rem; color: var(--text-muted); letter-spacing: 0.06em; }
     footer a { color: var(--accent); text-decoration: none; }
 
     /* FADE */
@@ -86,7 +86,7 @@
 <nav>
   <a href="index.html" class="nav-brand">
     <div class="nav-logo"><img src="images/logo.png" alt="National QuAIL" width="120" height="120" /></div>
-    <span class="nav-brand-text">National <span>QuAIL</span></span>
+    <span class="nav-brand-text">National <span style="color:var(--accent);">QuAIL</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">About</a></li>
@@ -121,7 +121,8 @@
   <!-- ABOUT CONTENT -->
   <div class="section">
     <div class="container">
-      <h2 class="section-title">About National QuAIL</h2>
+      <img src="images/logo.png" alt="National QuAIL" width="150" height="150" style="margin-bottom: 2rem; align-self: center; border-radius: 16px; border: 1px solid var(--border);" />
+      <h2 class="section-title">About National <span style="color:var(--accent);">QuAIL</span></h2>
       <div class="about-grid fade-up">
         <div class="about-text">
           <p><strong>National Quantum AI Laboratory (National QuAIL)</strong> is a national network dedicated to identifying near-term and long-term applications of quantum computing and quantum sensing.</p>
