@@ -4,42 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>National QuAIL – Contact Us</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#e8f0fe;--text-muted:#7a90b0;}
+    :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#f1f4fa;--text-muted:#ccd7e7;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+    body{background:var(--bg);color:var(--text);font-family:'Google Sans Flex',sans-serif;font-weight:200;font-size:1.125rem;line-height:1.7;overflow-x:hidden;}
+    h1,h2,h3,h4,h5,h6{font-family:'Google Sans Flex',sans-serif;font-weight:500;}
+    b,strong{font-weight:500;}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,10,20,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
     .nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
-    .nav-logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.75rem;color:#fff;flex-shrink:0;}
-    .nav-brand-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:0.04em;}
+    .nav-logo{flex-shrink:0;height:40px;display:flex;align-items:center;justify-content:center;}
+    .nav-logo img{height:100%;width:auto;max-width:120px;display:block;object-fit:contain;}
+    .nav-brand-text{font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:1.1rem;color:var(--text);letter-spacing:0.04em;}
     .nav-brand-text span{color:var(--accent);}
     .nav-links{display:flex;gap:0.15rem;list-style:none;}
-    .nav-links a{display:block;padding:0.4rem 0.85rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    .nav-links a{display:block;padding:0.4rem 0.85rem;font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-radius:4px;transition:color 0.2s,background 0.2s;}
     .nav-links a:hover{color:var(--accent);background:rgba(0,180,255,0.08);}
     .nav-links a.active{color:var(--accent);background:rgba(0,180,255,0.1);border-bottom:2px solid var(--accent);}
     .page-content{padding-top:64px;}
-    .page-hero{background:var(--bg2);padding:3.5rem 2.5rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero{background:var(--bg2);padding:3.5rem 2.5rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;text-align:center;}
     .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(0,255,195,0.05) 0%,transparent 60%);pointer-events:none;}
-    .page-hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
-    .page-hero h1{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;letter-spacing:0.04em;color:var(--text);}
+    .page-hero h1{font-size:2.8rem;letter-spacing:0.04em;color:var(--text);}
     .section{padding:4rem 0;}
     .container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
 
     .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;}
-    .contact-intro{font-size:1rem;color:var(--text-muted);margin-bottom:2.5rem;line-height:1.75;}
+    .contact-intro{font-size:1.125rem;color:var(--text-muted);margin-bottom:2.5rem;line-height:1.75;}
     .contact-detail{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;}
     .contact-icon{width:42px;height:42px;border-radius:10px;background:rgba(0,180,255,0.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
-    .contact-text strong{display:block;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.2rem;}
-    .contact-text{font-size:0.9rem;color:var(--text-muted);}
+    .contact-text strong{display:block;font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text);margin-bottom:0.2rem;}
+    .contact-text{font-size:1rem;color:var(--text-muted);}
     .contact-text a{color:var(--accent);text-decoration:none;}
 
-    .building-img{width:100%;border-radius:14px;border:1px solid var(--border);overflow:hidden;aspect-ratio:4/3;background:var(--surface);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;color:var(--text-muted);font-family:'Rajdhani',sans-serif;font-size:0.85rem;}
+    .building-img{width:100%;border-radius:14px;border:1px solid var(--border);overflow:hidden;aspect-ratio:4/3;background:var(--surface);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.75rem;color:var(--text-muted);font-size:0.85rem;}
     .building-img img{width:100%;height:100%;object-fit:cover;display:block;}
 
-    .map-placeholder{margin-top:1.5rem;width:100%;height:200px;border-radius:10px;border:1px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--text-muted);flex-direction:column;gap:0.5rem;}
+    .map-placeholder{margin-top:1.5rem;width:100%;height:200px;border-radius:10px;border:1px solid var(--border);background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--text-muted);flex-direction:column;gap:0.5rem;}
 
-    footer{background:#020609;border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;}
+    footer{background:#020609;border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;}
     footer a{color:var(--accent);text-decoration:none;}
     .fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .fade-up.visible{opacity:1;transform:translateY(0);}
@@ -49,7 +55,7 @@
 <body>
 <nav>
   <a href="index.html" class="nav-brand">
-    <div class="nav-logo">Q</div>
+    <div class="nav-logo"><img src="images/logo.png" alt="National QuAIL" width="120" height="120" /></div>
     <span class="nav-brand-text">National <span>QuAIL</span></span>
   </a>
   <ul class="nav-links">
@@ -78,7 +84,6 @@
   </div>
   <div style="height:5px;background:linear-gradient(90deg,#7b2fff,#00b4ff,#00ffc3);"></div>
   <div class="page-hero">
-    <p class="page-hero-eyebrow">Get in Touch</p>
     <h1>Contact Us</h1>
   </div>
 
@@ -94,7 +99,7 @@
             <div class="contact-text">
               <strong>Address</strong>
               Room G6K, IDE Building<br>
-              1401 N. Pine St.<br>
+              Missouri University of Science and Technology<br>
               Rolla, MO 65409-0350, USA
             </div>
           </div>
@@ -115,15 +120,15 @@
             </div>
           </div>
 
-          <div class="map-placeholder">
+          <!-- <div class="map-placeholder">
             <span>🗺️</span>
             <span>Missouri University of Science and Technology</span>
             <span style="opacity:0.5;">Rolla, MO 65409</span>
-          </div>
+          </div> -->
         </div>
 
         <div class="building-img">
-          <img src="IDEbuilding.png" alt="IDE Building, Missouri S&T">
+          <img src="images/missouri-s-t-building.jpg" alt="Missouri S&T">
         </div>
 
       </div>
@@ -131,7 +136,7 @@
   </div>
 </div>
 
-<footer>&copy; 2025 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
+<footer>&copy; 2026 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
 <script>
   document.querySelectorAll('.fade-up').forEach(el => {
     new IntersectionObserver(([e]) => { if(e.isIntersecting) el.classList.add('visible'); },{threshold:0.1}).observe(el);
