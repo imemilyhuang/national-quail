@@ -4,62 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>National QuAIL – People</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#e8f0fe;--text-muted:#7a90b0;--gold:#f0c040; }
+    :root{--bg:#050a14;--bg2:#080e1c;--surface:#0c1526;--surface2:#111d30;--border:rgba(0,180,255,0.12);--accent:#00b4ff;--accent2:#7b2fff;--accent3:#00ffc3;--text:#f1f4fa;--text-muted:#ccd7e7;--gold:#f0c040;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+    body{background:var(--bg);color:var(--text);font-family:'Google Sans Flex',sans-serif;font-weight:200;font-size:1.125rem;line-height:1.7;overflow-x:hidden;}
+    h1,h2,h3,h4,h5,h6{font-family:'Google Sans Flex',sans-serif;font-weight:500;}
+    b,strong{font-weight:500;}
     nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(5,10,20,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
     .nav-brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;}
-    .nav-logo{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.75rem;color:#fff;flex-shrink:0;}
-    .nav-brand-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);letter-spacing:0.04em;}
+    .nav-logo{flex-shrink:0;height:40px;display:flex;align-items:center;justify-content:center;}
+    .nav-logo img{height:100%;width:auto;max-width:120px;display:block;object-fit:contain;}
+    .nav-brand-text{font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:1.1rem;color:var(--text);letter-spacing:0.04em;}
     .nav-brand-text span{color:var(--accent);}
     .nav-links{display:flex;gap:0.15rem;list-style:none;}
-    .nav-links a{display:block;padding:0.4rem 0.85rem;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    .nav-links a{display:block;padding:0.4rem 0.85rem;font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;border-radius:4px;transition:color 0.2s,background 0.2s;}
     .nav-links a:hover{color:var(--accent);background:rgba(0,180,255,0.08);}
     .nav-links a.active{color:var(--accent);background:rgba(0,180,255,0.1);border-bottom:2px solid var(--accent);}
     .page-content{padding-top:64px;}
-    .page-hero{background:var(--bg2);padding:3.5rem 2.5rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+    .page-hero{background:var(--bg2);padding:3.5rem 2.5rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;text-align:center;}
     .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(123,47,255,0.08) 0%,transparent 60%);pointer-events:none;}
-    .page-hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;}
-    .page-hero h1{font-family:'Rajdhani',sans-serif;font-size:2.8rem;font-weight:700;letter-spacing:0.04em;color:var(--text);}
+    .page-hero h1{font-size:2.8rem;letter-spacing:0.04em;color:var(--text);}
     .section{padding:4rem 0;}
     .container{max-width:1100px;margin:0 auto;padding:0 2.5rem;}
-    .section-label{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;}
-    h2.group-title{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid var(--border);padding-bottom:0.6rem;margin-bottom:1.5rem;margin-top:2.5rem;}
+    .section-label{font-family:'Google Sans Flex',sans-serif;font-weight:500;font-size:1rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;}
+    h2.group-title{font-size:1rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid var(--border);padding-bottom:0.6rem;margin-bottom:1.5rem;margin-top:2.5rem;}
 
-    /* Director */
-    .director-card{display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden;}
-    .director-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2));}
-    .person-circle{width:120px;height:120px;border-radius:50%;border:3px solid var(--accent);flex-shrink:0;background:linear-gradient(135deg,var(--surface2),var(--surface));display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--accent);overflow:hidden;}
-    .person-circle img{width:100%;height:100%;object-fit:cover;}
-    .director-info h3{font-family:'Rajdhani',sans-serif;font-size:1.7rem;font-weight:700;color:var(--text);margin-bottom:0.2rem;}
-    .director-info .title{font-family:'Rajdhani',sans-serif;font-size:1rem;color:var(--text-muted);letter-spacing:0.04em;margin-bottom:0.3rem;}
-    .director-info .inst{font-size:0.9rem;color:var(--text-muted);margin-bottom:0.6rem;}
-    .area-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.73rem;color:#4fc3f7;background:rgba(79,195,247,0.1);border:1px solid rgba(79,195,247,0.25);border-radius:4px;padding:0.2rem 0.65rem;margin-bottom:0.75rem;}
-    .contact-line{font-size:0.85rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;}
+    /* Profile cards (director + grid members) */
+    .profile-card{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;transition:border-color 0.25s;}
+    .profile-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,var(--accent),var(--accent2));pointer-events:none;}
+    .profile-card:hover{border-color:rgba(0,180,255,0.3);}
+    .profile-card--director{margin-bottom:3rem;}
+    .profile-photo{width:130px;height:130px;border-radius:50%;border:3px solid var(--accent);flex-shrink:0;background:linear-gradient(135deg,var(--surface2),var(--surface));display:flex;align-items:center;justify-content:center;font-family:'Google Sans Flex',sans-serif;font-size:1.05rem;font-weight:500;color:var(--accent);overflow:hidden;line-height:1;}
+    .profile-photo--lg{width:130px;height:130px;font-size:2rem;}
+    .profile-photo img{width:100%;height:100%;object-fit:cover;}
+    .profile-info h3{font-size:1.7rem;color:var(--text);margin-bottom:0.25rem;line-height:1.2;}
+    .profile-info .title{font-size:1.0625rem;font-weight:200;color:var(--text-muted);letter-spacing:0.04em;font-style:italic;margin:0 0 0.4rem 0;margin-bottom:0.6rem;line-height:1.5;}
+    .profile-info .inst{font-size:1rem;color:var(--text-muted);margin-bottom:0.6rem;line-height:1.4;}
+    .profile-info>:last-child{margin-bottom:0;}
+    .area-tags{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-bottom:0.75rem;}
+    .area-tags .area-tag{margin-bottom:0;}
+    .area-tag{display:inline-block;font-size:0.73rem;color:#4fc3f7;background:rgba(79,195,247,0.1);border:1px solid rgba(79,195,247,0.25);border-radius:4px;padding:0.2rem 0.65rem;margin-bottom:0.75rem;}
+    .contact-line{font-size:0.95rem;color:var(--text-muted);}
     .contact-line a{color:var(--accent);text-decoration:none;}
+    .gold-badge{display:inline;font-size:0.72rem;color:var(--gold);font-weight:500;margin-left:0.4rem;vertical-align:0.12em;}
 
     /* People grid */
     .people-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
-    .person-card{display:flex;align-items:center;gap:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;transition:border-color 0.25s,transform 0.25s;}
-    .person-card:hover{border-color:rgba(0,180,255,0.3);transform:translateY(-2px);}
-    .person-circle-sm{width:72px;height:72px;border-radius:50%;border:2px solid var(--accent);flex-shrink:0;background:linear-gradient(135deg,var(--surface2),var(--surface));display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;color:var(--accent);overflow:hidden;}
-    .person-circle-sm img{width:100%;height:100%;object-fit:cover;}
-    .person-card-info h4{font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:0.2rem;}
-    .gold-badge{color:var(--gold);font-size:0.72rem;font-family:'JetBrains Mono',monospace;margin-left:0.4rem;}
 
-    footer{background:#020609;border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;}
+    /* Placeholder rows */
+    .profile-card.profile-card--placeholder:hover{border-color:var(--border);}
+    .profile-card.profile-card--placeholder .profile-photo{border-color:var(--text-muted);color:var(--text-muted);}
+    .profile-card.profile-card--placeholder .profile-info h3{color:var(--text-muted);}
+    .profile-card.profile-card--placeholder{opacity:0.65;pointer-events:none;}
+    .profile-card.profile-card--placeholder .area-tag{color:var(--text-muted);border-color:rgba(255,255,255,0.1);background:transparent;}
+
+    footer{background:#020609;border-top:1px solid var(--border);padding:2rem 2.5rem;text-align:center;font-size:0.72rem;color:var(--text-muted);letter-spacing:0.06em;}
     footer a{color:var(--accent);text-decoration:none;}
     .fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .fade-up.visible{opacity:1;transform:translateY(0);}
-    @media(max-width:768px){.people-grid{grid-template-columns:1fr;}.director-card{grid-template-columns:1fr;text-align:center;}.nav-links a{padding:0.4rem 0.5rem;font-size:0.75rem;}}
+    @media(max-width:768px){.people-grid{grid-template-columns:1fr;}.profile-card{grid-template-columns:1fr;justify-items:center;text-align:center;padding:2rem 1.75rem;gap:1.5rem;}.profile-info{width:100%;}.profile-info .area-tag{text-align:center;}.profile-info .area-tags{justify-content:center;}.nav-links a{padding:0.4rem 0.5rem;font-size:0.75rem;}}
   </style>
 </head>
 <body>
 <nav>
   <a href="index.html" class="nav-brand">
-    <div class="nav-logo">Q</div>
+    <div class="nav-logo"><img src="images/logo.png" alt="National QuAIL" width="120" height="120" /></div>
     <span class="nav-brand-text">National <span>QuAIL</span></span>
   </a>
   <ul class="nav-links">
@@ -88,7 +102,6 @@
   </div>
   <div style="height:5px;background:linear-gradient(90deg,#7b2fff,#00b4ff,#00ffc3);"></div>
   <div class="page-hero">
-    <p class="page-hero-eyebrow">Our Team</p>
     <h1>People</h1>
   </div>
 
@@ -97,13 +110,16 @@
 
       <!-- Lab Director -->
       <p class="section-label">Lab Director</p>
-      <div class="director-card fade-up">
-        <div class="person-circle"><img src="GraceYan.png" alt="Grace Yan"></div>
-        <div class="director-info">
+      <div class="profile-card profile-card--director fade-up">
+        <div class="profile-photo profile-photo--lg"><img src="profile-pictures/grace-yan.jpg" alt="Grace Yan"></div>
+        <div class="profile-info">
           <h3>Grace Yan</h3>
-          <p class="title">Professor, Ph.D. · Lab Director</p>
-          <p class="inst">Missouri University of Science and Technology</p>
-          <div class="area-tag">CFD Simulation &nbsp;|&nbsp; Quantum Computing</div>
+          <p class="title">Professor, Ph.D.</p>
+          <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+          <div class="area-tags">
+            <div class="area-tag">CFD Simulation</div>
+            <div class="area-tag">Quantum Computing</div>
+          </div>
           <p class="contact-line">(573) 341-6280 &nbsp;|&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a></p>
         </div>
       </div>
@@ -111,14 +127,73 @@
       <!-- Quantum Mechanics -->
       <h2 class="group-title fade-up">Researchers in Quantum Mechanics</h2>
       <div class="people-grid fade-up">
-        <div class="person-card">
-          <div class="person-circle-sm"><img src="thomasvojta.jpg" alt="Dr. Thomas Vojta"></div>
-          <div class="person-card-info">
-            <h4>Dr. Thomas Vojta</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Chairman &amp; Curators' Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">Missouri S&amp;T</p>
-            <div class="area-tag">Quantum &amp; Classical Phase Transitions &nbsp;|&nbsp; Strongly Correlated Electrons</div>
-            <p class="contact-line" style="font-size:0.75rem;">(573) 341-4793 &nbsp;|&nbsp; <a href="mailto:vojtat@mst.edu">vojtat@mst.edu</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/thomas-vojta.jpg" alt="Dr. Thomas Vojta"></div>
+          <div class="profile-info">
+            <h3>Dr. Thomas Vojta</h3>
+            <p class="title">Chairman &amp; Curators' Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum &amp; Classical Phase Transitions</div>
+              <div class="area-tag">Strongly Correlated Electrons</div>
+            </div>
+            <p class="contact-line">(573) 341-4793 &nbsp;|&nbsp; <a href="mailto:vojtat@mst.edu">vojtat@mst.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/daniel-fischer.jpg" alt="Dr. Daniel Fischer"></div>
+          <div class="profile-info">
+            <h3>Dr. Daniel Fischer</h3>
+            <p class="title">Associate Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Atomic, Molecular, and Optical Physics</div>
+              <div class="area-tag">laser-cooling and trapping</div>
+              <div class="area-tag">few-particle quantum dynamics</div>
+            </div>
+            <p class="contact-line">(573) 341-4781 &nbsp;|&nbsp; <a href="mailto:fischerda@mst.edu">fischerda@mst.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/hyunsoo-kim.jpg" alt="Dr. Hyunsoo Kim"></div>
+          <div class="profile-info">
+            <h3>Dr. Hyunsoo Kim</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum materials</div>
+              <div class="area-tag">Topological phases</div>
+              <div class="area-tag">Superconductivity</div>
+            </div>
+            <p class="contact-line">(573) 341-4781 &nbsp;|&nbsp; <a href="mailto:hyunsoo.kim@mst.edu">hyunsoo.kim@mst.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/alexey-yamilov.png" alt="Dr. Alexey Yamilov"></div>
+          <div class="profile-info">
+            <h3>Dr. Alexey Yamilov</h3>
+            <p class="title">Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Wave propagation in complex media</div>
+              <div class="area-tag">Optics and photonics</div>
+              <div class="area-tag">Condensed matter physics</div>
+            </div>
+            <p class="contact-line">(573) 341-4781 &nbsp;|&nbsp; <a href="mailto:yamilov@mst.edu">yamilov@mst.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/julia-medvedeva.png" alt="Dr. Julia E. Medvedeva"></div>
+          <div class="profile-info">
+            <h3>Dr. Julia E. Medvedeva</h3>
+            <p class="title">Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Computational condensed matter physics</div>
+              <div class="area-tag">Materials science</div>
+              <div class="area-tag">Density-functional methods</div>
+            </div>
+            <p class="contact-line">(573) 341-4789 &nbsp;|&nbsp; <a href="mailto:juliaem@mst.edu">juliaem@mst.edu</a></p>
           </div>
         </div>
       </div>
@@ -126,14 +201,128 @@
       <!-- Quantum Computing -->
       <h2 class="group-title fade-up">Researchers in Quantum Computing</h2>
       <div class="people-grid fade-up">
-        <div class="person-card">
-          <div class="person-circle-sm">XL</div>
-          <div class="person-card-info">
-            <h4>Xiangyu Li</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Earth Scientist</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">Pacific Northwest National Laboratory</p>
-            <div class="area-tag">Quantum Algorithms &nbsp;|&nbsp; Quantum Computing</div>
-            <p class="contact-line" style="font-size:0.75rem;">(000) 000-0000 &nbsp;|&nbsp; <a href="mailto:xiangyu.li@pnnl.gov">xiangyu.li@pnnl.gov</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/yuri-alexeev.png" alt="Yuri Alexeev"></div>
+          <div class="profile-info">
+            <h3>Yuri Alexeev</h3>
+            <p class="title">Senior Quantum Algorithm Engineer</p>
+            <p class="inst">NVIDIA Corporation, Santa Clara, CA, US</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum algorithms</div>
+              <div class="area-tag">Error correction and mitigation</div>
+              <div class="area-tag">CUDA-Q and accelerated quantum simulation</div>
+            </div>
+            <p class="contact-line">(408) 486-2000 &nbsp;|&nbsp; <a href="mailto:yuri.alexeev@gmail.com">yuri.alexeev@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/andrew-landahl.jpg" alt="Andrew J. Landahl"></div>
+          <div class="profile-info">
+            <h3>Andrew J. Landahl</h3>
+            <p class="title">Research Professor</p>
+            <p class="inst">Sandia National Laboratories / University of New Mexico</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum algorithms</div>
+              <div class="area-tag">Error correction</div>
+              <div class="area-tag">Fault-tolerant quantum computing</div>
+            </div>
+            <p class="contact-line">(505) 277-1850 &nbsp;|&nbsp; <a href="mailto:ajland@sandia.gov">ajland@sandia.gov</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/linsey-rodenbach.jpg" alt="Linsey Rodenbach"></div>
+          <div class="profile-info">
+            <h3>Linsey Rodenbach</h3>
+            <p class="title">Developer Relations Manager, Quantum Computing</p>
+            <p class="inst">NVIDIA</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum computing</div>
+              <div class="area-tag">Quantum technologies</div>
+              <div class="area-tag">Academic research partnerships</div>
+            </div>
+            <p class="contact-line">(408) 486-2000 &nbsp;|&nbsp; <a href="mailto:lrodenbach@nvidia.com">lrodenbach@nvidia.com</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/andrea-delgado.png" alt="Andrea Delgado"></div>
+          <div class="profile-info">
+            <h3>Andrea Delgado</h3>
+            <p class="title">Quantum Strategy &amp; Product Leader</p>
+            <p class="inst">Qblox</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum computing</div>
+              <div class="area-tag">HPC–quantum systems</div>
+              <div class="area-tag">Quantum control</div>
+            </div>
+            <p class="contact-line">(617) 212-6817 &nbsp;|&nbsp; <a href="mailto:andrea.delgado@qblox.com">andrea.delgado@qblox.com</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/daphné-zinetti.png" alt="Daphné Zinetti"></div>
+          <div class="profile-info">
+            <h3>Daphné Zinetti</h3>
+            <p class="title">Quantum Application Scientist</p>
+            <p class="inst">Qblox</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum control</div>
+              <div class="area-tag">Scalable quantum platforms</div>
+              <div class="area-tag">Spin qubit readout</div>
+            </div>
+            <p class="contact-line">(617) 212-6817 &nbsp;|&nbsp; <a href="mailto:daphne.zinetti@qblox.com">daphne.zinetti@qblox.com</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/avah-banerjee.png" alt="Dr. Avah Banerjee"></div>
+          <div class="profile-info">
+            <h3>Dr. Avah Banerjee</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum Information Theory</div>
+              <div class="area-tag">Graph Theory</div>
+              <div class="area-tag">Quantum computing</div>
+            </div>
+            <p class="contact-line">(573) 341-4585 &nbsp;|&nbsp; <a href="mailto:banerjeeav@mst.edu">banerjeeav@mst.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/qiang-guan.jpg" alt="Qiang Guan"></div>
+          <div class="profile-info">
+            <h3>Qiang Guan</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">Kent State University</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum Computing</div>
+              <div class="area-tag">High Performance Computing</div>
+              <div class="area-tag">Resilience and Power</div>
+            </div>
+            <p class="contact-line">(330) 672-2191 &nbsp;|&nbsp; <a href="mailto:qguan@kent.edu">qguan@kent.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/simeon-mistakidis.jpg" alt="Simeon Mistakidis"></div>
+          <div class="profile-info">
+            <h3>Simeon Mistakidis</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Dynamics of quantum many-body systems</div>
+              <div class="area-tag">Quantum simulation</div>
+            </div>
+            <p class="contact-line">(573) 341-4781 &nbsp;|&nbsp; <a href="mailto:smystakidis@mst.edu">smystakidis@mst.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/xiangyu-li.jpg" alt="Xiangyu Li"></div>
+          <div class="profile-info">
+            <h3>Xiangyu Li</h3>
+            <p class="title">Earth scientist</p>
+            <p class="inst">Pacific Northwest National Laboratory</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum algorithms</div>
+              <div class="area-tag">Quantum computing</div>
+            </div>
+            <p class="contact-line">(888) 375-7665 &nbsp;|&nbsp; <a href="mailto:xiangyu.li@pnnl.gov">xiangyu.li@pnnl.gov</a></p>
           </div>
         </div>
       </div>
@@ -141,36 +330,61 @@
       <!-- Quantum Sensing -->
       <h2 class="group-title fade-up">Researchers in Quantum Sensing</h2>
       <div class="people-grid fade-up">
-        <div class="person-card" style="opacity:0.5;pointer-events:none;">
-          <div class="person-circle-sm" style="border-color:var(--text-muted);color:var(--text-muted);">+</div>
-          <div class="person-card-info">
-            <h4 style="color:var(--text-muted);">Coming Soon</h4>
-            <div class="area-tag" style="color:var(--text-muted);border-color:rgba(255,255,255,0.1);background:transparent;">Quantum Sensing</div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/ulrich-jentschura.png" alt="Ulrich D. Jentschura"></div>
+          <div class="profile-info">
+            <h3>Ulrich D. Jentschura</h3>
+            <p class="title">Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Quantum Electrodynamics</div>
+              <div class="area-tag">Large-Order Perturbation Theory</div>
+            </div>
+            <p class="contact-line">(573) 341-4781 &nbsp;|&nbsp; <a href="mailto:ulj@mst.edu">ulj@mst.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/julia-medvedeva.png" alt="Julia E. Medvedeva"></div>
+          <div class="profile-info">
+            <h3>Julia E. Medvedeva</h3>
+            <p class="title">Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">Computational condensed matter physics</div>
+              <div class="area-tag">Materials science</div>
+            </div>
+            <p class="contact-line">(573) 341-4789 &nbsp;|&nbsp; <a href="mailto:juliaem@mst.edu">juliaem@mst.edu</a></p>
           </div>
         </div>
       </div>
 
       <!-- Mathematics -->
-      <h2 class="group-title fade-up">Researchers in Mathematics</h2>
+      <h2 class="group-title fade-up">Research in PDE Solving (Math)</h2>
       <div class="people-grid fade-up">
-        <div class="person-card">
-          <div class="person-circle-sm">CL</div>
-          <div class="person-card-info">
-            <h4>Charles Li</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">University of Missouri</p>
-            <div class="area-tag">Dynamical Systems &nbsp;|&nbsp; PDEs</div>
-            <p class="contact-line" style="font-size:0.75rem;">(573) 884-0622 &nbsp;|&nbsp; <a href="mailto:liyan@missouri.edu">liyan@missouri.edu</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/charles-li.jpg" alt="Charles Li"></div>
+          <div class="profile-info">
+            <h3>Charles Li</h3>
+            <p class="title">Professor</p>
+            <p class="inst">University of Missouri</p>
+            <div class="area-tags">
+              <div class="area-tag">Dynamical Systems</div>
+              <div class="area-tag">PDEs</div>
+            </div>
+            <p class="contact-line">(573) 884-0622 &nbsp;|&nbsp; <a href="mailto:liyan@missouri.edu">liyan@missouri.edu</a></p>
           </div>
         </div>
-        <div class="person-card">
-          <div class="person-circle-sm">YZ</div>
-          <div class="person-card-info">
-            <h4>Yanzhi Zhang</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">Missouri S&amp;T</p>
-            <div class="area-tag">Bose-Einstein Superfluids &nbsp;|&nbsp; Superconductivity</div>
-            <p class="contact-line" style="font-size:0.75rem;">(573) 341-4651 &nbsp;|&nbsp; <a href="mailto:zhangyanz@mst.edu">zhangyanz@mst.edu</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/yanzhi-zhang.jpg" alt="Yanzhi Zhang"></div>
+          <div class="profile-info">
+            <h3>Yanzhi Zhang</h3>
+            <p class="title">Professor</p>
+            <p class="inst">Missouri University of Science and Technology </p>
+            <div class="area-tags">
+              <div class="area-tag">Bose-Einstein Superfluids</div>
+              <div class="area-tag">Superconductivity</div>
+            </div>
+            <p class="contact-line">(573) 341-4651 &nbsp;|&nbsp; <a href="mailto:zhangyanz@mst.edu">zhangyanz@mst.edu</a></p>
           </div>
         </div>
       </div>
@@ -178,24 +392,56 @@
       <!-- AI and ML -->
       <h2 class="group-title fade-up">Researchers in AI and Machine Learning</h2>
       <div class="people-grid fade-up">
-        <div class="person-card">
-          <div class="person-circle-sm">XY</div>
-          <div class="person-card-info">
-            <h4>Xiaowei Yu</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Assistant Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">Missouri S&amp;T</p>
-            <div class="area-tag">AI &nbsp;|&nbsp; Machine Learning</div>
-            <p class="contact-line" style="font-size:0.75rem;">(573) 341-6807 &nbsp;|&nbsp; <a href="mailto:xych8@mst.edu">xych8@mst.edu</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/xiaowei-yu.jpg" alt="Xiaowei Yu"></div>
+          <div class="profile-info">
+            <h3>Xiaowei Yu</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">Missouri University of Science and Technology (Missouri S&T)</p>
+            <div class="area-tags">
+              <div class="area-tag">AI</div>
+              <div class="area-tag">Machine learning</div>
+            </div>
+            <p class="contact-line">(573) 341-6807 &nbsp;|&nbsp; <a href="mailto:xych8@mst.edu">xych8@mst.edu</a></p>
           </div>
         </div>
-        <div class="person-card">
-          <div class="person-circle-sm">ZW</div>
-          <div class="person-card-info">
-            <h4>Zhengchao Wan</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Assistant Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">University of Missouri, Columbia</p>
-            <div class="area-tag">AI Interpretability &nbsp;|&nbsp; Metric Geometry</div>
-            <p class="contact-line" style="font-size:0.75rem;">(573) 882-6221 &nbsp;|&nbsp; <a href="mailto:zwan@missouri.edu">zwan@missouri.edu</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/zhengchao-wan.jpg" alt="Zhengchao Wan"></div>
+          <div class="profile-info">
+            <h3>Zhengchao Wan</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">University of Missouri, Columbia</p>
+            <div class="area-tags">
+              <div class="area-tag">AI interpretability</div>
+              <div class="area-tag">Metric geometry</div>
+            </div>
+            <p class="contact-line">(573) 882-6221 &nbsp;|&nbsp; <a href="mailto:zwan@missouri.edu">zwan@missouri.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/haifeng-wang.jpeg" alt="Haifeng Wang"></div>
+          <div class="profile-info">
+            <h3>Haifeng Wang</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">Washington State University</p>
+            <div class="area-tags">
+              <div class="area-tag">AI-enhanced wind engineering</div>
+              <div class="area-tag">Physics-informed and data-driven surrogate modeling</div>
+            </div>
+            <p class="contact-line">(509) 335-2829 &nbsp;|&nbsp; <a href="mailto:haifeng.wang@wsu.edu">haifeng.wang@wsu.edu</a></p>
+          </div>
+        </div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/zhen-hu.png" alt="Zhen Hu"></div>
+          <div class="profile-info">
+            <h3>Zhen Hu</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">University of Michigan-Dearborn</p>
+            <div class="area-tags">
+              <div class="area-tag">Integrated Design and Manufacturing</div>
+              <div class="area-tag">Machine Learning</div>
+            </div>
+            <p class="contact-line">(313) 593-5361 &nbsp;|&nbsp; <a href="mailto:zhennhu@umich.edu">zhennhu@umich.edu</a></p>
           </div>
         </div>
       </div>
@@ -203,24 +449,17 @@
       <!-- Computer Science -->
       <h2 class="group-title fade-up">Researchers in Computer Science</h2>
       <div class="people-grid fade-up">
-        <div class="person-card">
-          <div class="person-circle-sm">QG</div>
-          <div class="person-card-info">
-            <h4>Qiang Guan</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Assistant Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">Kent State University</p>
-            <div class="area-tag">Quantum Computing &nbsp;|&nbsp; HPC &nbsp;|&nbsp; Resilience</div>
-            <p class="contact-line" style="font-size:0.75rem;">(330) 672-2191 &nbsp;|&nbsp; <a href="mailto:qguan@kent.edu">qguan@kent.edu</a></p>
-          </div>
-        </div>
-        <div class="person-card">
-          <div class="person-circle-sm">XL</div>
-          <div class="person-card-info">
-            <h4>Xin Liang</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Assistant Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">University of Kentucky</p>
-            <div class="area-tag">Parallel Systems &nbsp;|&nbsp; Data Management</div>
-            <p class="contact-line" style="font-size:0.75rem;">(859) 257-8029 &nbsp;|&nbsp; <a href="mailto:xliang@uky.edu">xliang@uky.edu</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/xin-liang.jpg" alt="Xin Liang"></div>
+          <div class="profile-info">
+            <h3>Xin Liang</h3>
+            <p class="title">Assistant Professor</p>
+            <p class="inst">University of Kentucky</p>
+            <div class="area-tags">
+              <div class="area-tag">Parallel Systems</div>
+              <div class="area-tag">Data Management</div>
+            </div>
+            <p class="contact-line">(859) 257-8029 &nbsp;|&nbsp; <a href="mailto:xliang@uky.edu">xliang@uky.edu</a></p>
           </div>
         </div>
       </div>
@@ -228,41 +467,54 @@
       <!-- Science and Engineering -->
       <h2 class="group-title fade-up">Researchers in Science and Engineering</h2>
       <div class="people-grid fade-up">
-        <div class="person-card">
-          <div class="person-circle-sm">PB</div>
-          <div class="person-card-info">
-            <h4>Patrick Burke</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Warn-on-Forecast Program Lead</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">National Severe Storms Laboratory</p>
-            <div class="area-tag">Forecast Operations &nbsp;|&nbsp; Real-world Applications</div>
-            <p class="contact-line" style="font-size:0.75rem;">(405) 325-5667 &nbsp;|&nbsp; <a href="mailto:patrick.burke@noaa.gov">patrick.burke@noaa.gov</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/patrick-burke.jpg" alt="Patrick Burke"></div>
+          <div class="profile-info">
+            <h3>Patrick Burke</h3>
+            <p class="title">Warn-on-Forecast Program Lead</p>
+            <p class="inst">National Severe Storms Laboratory</p>
+            <div class="area-tags">
+              <div class="area-tag">Forecast Operations</div>
+              <div class="area-tag">Real-world application</div>
+            </div>
+            <p class="contact-line">(405) 325-5667 &nbsp;|&nbsp; <a href="mailto:patrick.burke@noaa.gov">patrick.burke@noaa.gov</a></p>
           </div>
         </div>
-        <div class="person-card">
-          <div class="person-circle-sm">GB</div>
-          <div class="person-card-info">
-            <h4>George Brian</h4>
-            <div class="area-tag">Science &amp; Engineering</div>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/george-bryan.jpg" alt="George H. Bryan"></div>
+          <div class="profile-info">
+            <h3>George H. Bryan</h3>
+            <p class="title">Senior Scientist</p>
+            <p class="inst">NSF National Center</p>
+            <div class="area-tags">
+              <div class="area-tag">Numerical weather modeling</div>
+              <div class="area-tag">Cloud Model 1 (CM1)</div>
+              <div class="area-tag">Large-eddy simulation</div>
+            </div>
+            <p class="contact-line">(303) 497-8989 &nbsp;|&nbsp; <a href="mailto:gbryan@ucar.edu">gbryan@ucar.edu</a></p>
           </div>
         </div>
-        <div class="person-card">
-          <div class="person-circle-sm">MX</div>
-          <div class="person-card-info">
-            <h4>Ming Xue</h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Professor</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">University of Oklahoma</p>
-            <div class="area-tag">Severe Storm &nbsp;|&nbsp; Data Assimilation</div>
-            <p class="contact-line" style="font-size:0.75rem;">(405) 325-6037 &nbsp;|&nbsp; <a href="mailto:mxue@ou.edu">mxue@ou.edu</a></p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/ming-xue.jpg" alt="Ming Xue"></div>
+          <div class="profile-info">
+            <h3>Ming Xue</h3>
+            <p class="title">Professor</p>
+            <p class="inst">University of Oklahoma</p>
+            <div class="area-tags">
+              <div class="area-tag">Severe storm</div>
+              <div class="area-tag">Data assimilation</div>
+            </div>
+            <p class="contact-line">(405) 325-6037 &nbsp;|&nbsp; <a href="mailto:mxue@ou.edu">mxue@ou.edu</a></p>
           </div>
         </div>
-        <div class="person-card">
-          <div class="person-circle-sm">RL</div>
-          <div class="person-card-info">
-            <h4>Ruby Leung <span class="gold-badge">NAE Member</span></h4>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.2rem;">Battelle Fellow</p>
-            <p class="contact-line" style="font-size:0.78rem;margin-bottom:0.35rem;color:var(--text-muted);">Pacific Northwest National Laboratory</p>
+        <div class="profile-card fade-up">
+          <div class="profile-photo"><img src="profile-pictures/ruby-leung.jpg" alt="Ruby Leung"></div>
+          <div class="profile-info">
+            <h3>Ruby Leung<span class="gold-badge"> · NAE Member</span></h3>
+            <p class="title">Battelle Fellow</p>
+            <p class="inst">PNNL</p>
             <div class="area-tag">Earth Science</div>
-            <p class="contact-line" style="font-size:0.75rem;">(509) 372-6182 &nbsp;|&nbsp; <a href="mailto:Ruby.Leung@pnnl.gov">Ruby.Leung@pnnl.gov</a></p>
+            <p class="contact-line">(509) 372-6182 &nbsp;|&nbsp; <a href="mailto:Ruby.Leung@pnnl.gov">Ruby.Leung@pnnl.gov</a></p>
           </div>
         </div>
       </div>
@@ -271,7 +523,7 @@
   </div>
 </div>
 
-<footer>&copy; 2025 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
+<footer>&copy; 2026 National Quantum AI Laboratory (National QuAIL) &nbsp;·&nbsp; <a href="mailto:yang@mst.edu">yang@mst.edu</a> &nbsp;·&nbsp; Rolla, MO, USA</footer>
 <script>
   document.querySelectorAll('.fade-up').forEach(el => {
     new IntersectionObserver(([e]) => { if(e.isIntersecting) el.classList.add('visible'); },{threshold:0.1}).observe(el);
